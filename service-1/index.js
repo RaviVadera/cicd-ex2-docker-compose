@@ -17,7 +17,7 @@ app.get('/', async (req, res) => {
     // form and send response
     const sender = `${req.socket.remoteAddress}:${req.socket.remotePort}`;
     const receiver = `${req.socket.localAddress}:${req.socket.localPort}`;
-    let response = `Hello from ${sender}<br/>to ${receiver}<br/>${service2Response}`;
+    let response = `Hello from ${sender}\nto ${receiver}\n${service2Response}\n`;
     res.send(response);
 });
 
