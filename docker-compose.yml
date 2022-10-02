@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  
+  service-1:
+    build: service-1/.
+    ports:
+      - "8001:3000"
+    networks:
+      - default
+      - private
+    depends_on:
+      - service-2
+
+  service-2:
+    image: exercise-2_service-2
+    networks:
+      - private
+
+networks:
+  default:
+  private:
