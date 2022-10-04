@@ -15,10 +15,11 @@ app.get('/', (req, res) => {
     const sender = `${req.socket.remoteAddress}:${req.socket.remotePort}`;
     const receiver = `${req.socket.localAddress}:${req.socket.localPort}`;
     let response = `Hello from ${sender}\nto ${receiver}`
+    res.header('Content-Type', 'text/plain');
     res.send(response);
 });
 
 // start express server on port
 app.listen(localPort, localIP, () => {
-    console.log("service-2 -> started");
+    console.log('service-2 -> started');
 });
